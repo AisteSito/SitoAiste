@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aistedicasa</title>
+    <link rel="stylesheet" href="/styles/common.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    
+    body {
+    font-family: 'Poppins', sans-serif;
+}
+    </style>
+
+</head>
+<body>
+    <!-- Включаем шапку -->
+    <header class="site-header">
+  <div class="header-container">
+    <a href="/" class="logo">
+    <span>Aistedicasa</span>
+    </a>
+
+    <div class="right-block">
+      <div class="lang-fab">
+        <div class="language-selector">
+          <label for="lang-switcher" class="visually-hidden">Select language</label>
+          <select id="lang-switcher">
+            <option value="cs" selected>🇱🇹 LT</option>
+            <option value="en">🇬🇧 EN</option>
+            <option value="ru">🇷🇺 RU</option>
+            <option value="de">🇩🇪 DE</option>
+            <option value="lv">🇱🇻 LV</option>
+            <option value="pl">🇵🇱 PL</option>
+            <option value="fi">🇫🇮 FI</option>
+            <option value="it">🇮🇹 IT</option>
+            <option value="sl">🇸🇮 SL</option>
+            <option value="no">🇳🇴 NO</option>
+          </select>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="/" data-i18n="head1">Butai</a></li>
+          <li><a href="/" data-i18n="head2">Vilos</a></li>
+          <li><a href="/" data-i18n="head3">Nuoma</a></li>
+          <li><a href="/" data-i18n="head4">Kontaktai</a></li>
+          <li><a href="/" data-i18n="head5">Parduoti</a></li>
+          <li><a href="/" data-i18n="head6">Apie Mane</a></li>
+          <li><a href="/" data-i18n="head7">Publikacijos</a></li>
+        </ul>
+      </nav>
+
+      <div class="burger-wrapper">
+        <div class="burger-menu" onclick="toggleMenu()">
+          <div></div><div></div><div></div>
+        </div>
+      </div>
+    </div>
+<nav class="mobile-nav">
+    <ul>
+          <li><a href="/" data-i18n="head1">Butai</a></li>
+          <li><a href="/" data-i18n="head2">Vilos</a></li>
+          <li><a href="/" data-i18n="head3">Nuoma</a></li>
+          <li><a href="/" data-i18n="head4">Kontaktai</a></li>
+          <li><a href="/" data-i18n="head5">Parduoti</a></li>
+          <li><a href="/" data-i18n="head6">Apie Mane</a></li>
+          <li><a href="/" data-i18n="head7">Publikacijos</a></li>
+    </ul>
+</nav>
+  </div>
+</header>
+
+
+
+    <!-- Основной контент -->
+    <main>
+        
+        <link rel="stylesheet" href="/styles/home.css">
+    <section id="home">
+<section class="home-properties">
+      <div class="property-card" style="background-image: url('/foto/galeri/1.webp');">
+    <div class="property-content">
+  <div class="property-text">
+      <h3>Panoraminiai apartamentai<br>su įspūdinga terasa</h3>
+    <p class="property-description">
+      Tai ne tik būstas, tai gyvenimo būdas – tiems, kurie vertina komfortą, panoraminius vaizdus ir prestižinę Vilniaus lokaciją.
+    </p>
+    </div>
+    <div class="prop-down-sec">
+    <div>
+      <p class="property-size">96 kv.m</p>
+      <p class="property-price">950 000 €</p>
+    </div>
+<div class="property-buttons">
+  <a class="btn-main" href="/property">Plačiau</a>
+  <a class="btn-icon" href="#">&#8594;</a>
+</div>
+</div>
+    </div>
+  </div>
+
+      <div class="property-card" style="background-image: url('/foto/galeri/2.webp');">
+    <div class="property-content">
+  <div class="property-text">
+      <h3>Panoraminiai apartamentai<br>su įspūdinga terasa</h3>
+    <p class="property-description">
+      Tai ne tik būstas, tai gyvenimo būdas – tiems, kurie vertina komfortą, panoraminius vaizdus ir prestižinę Vilniaus lokaciją.
+    </p>
+    </div>
+    <div class="prop-down-sec">
+    <div>
+      <p class="property-size">96 kv.m</p>
+      <p class="property-price">950 000 €</p>
+    </div>
+<div class="property-buttons">
+  <a class="btn-main" href="#">Plačiau</a>
+  <a class="btn-icon" href="#">&#8594;</a>
+</div>
+</div>
+    </div>
+  </div>
+
+      <div class="property-card" style="background-image: url('/foto/galeri/3.webp');">
+    <div class="property-content">
+  <div class="property-text">
+      <h3>Panoraminiai apartamentai<br>su įspūdinga terasa</h3>
+    <p class="property-description">
+      Tai ne tik būstas, tai gyvenimo būdas – tiems, kurie vertina komfortą, panoraminius vaizdus ir prestižinę Vilniaus lokaciją.
+    </p>
+    </div>
+    <div class="prop-down-sec">
+    <div>
+      <p class="property-size">96 kv.m</p>
+      <p class="property-price">950 000 €</p>
+    </div>
+<div class="property-buttons">
+  <a class="btn-main" href="#">Plačiau</a>
+  <a class="btn-icon" href="#">&#8594;</a>
+</div>
+</div>
+    </div>
+  </div>
+
+      <div class="property-card" style="background-image: url('/foto/galeri/4.webp');">
+    <div class="property-content">
+  <div class="property-text">
+      <h3>Panoraminiai apartamentai<br>su įspūdinga terasa</h3>
+    <p class="property-description">
+      Tai ne tik būstas, tai gyvenimo būdas – tiems, kurie vertina komfortą, panoraminius vaizdus ir prestižinę Vilniaus lokaciją.
+    </p>
+    </div>
+    <div class="prop-down-sec">
+    <div>
+      <p class="property-size">96 kv.m</p>
+      <p class="property-price">950 000 €</p>
+    </div>
+<div class="property-buttons">
+  <a class="btn-main" href="#">Plačiau</a>
+  <a class="btn-icon" href="#">&#8594;</a>
+</div>
+</div>
+    </div>
+  </div>
+
+      <div class="property-card" style="background-image: url('/foto/galeri/5.webp');">
+    <div class="property-content">
+  <div class="property-text">
+      <h3>Panoraminiai apartamentai<br>su įspūdinga terasa</h3>
+    <p class="property-description">
+      Tai ne tik būstas, tai gyvenimo būdas – tiems, kurie vertina komfortą, panoraminius vaizdus ir prestižinę Vilniaus lokaciją.
+    </p>
+    </div>
+    <div class="prop-down-sec">
+    <div>
+      <p class="property-size">96 kv.m</p>
+      <p class="property-price">950 000 €</p>
+    </div>
+<div class="property-buttons">
+  <a class="btn-main" href="#">Plačiau</a>
+  <a class="btn-icon" href="#">&#8594;</a>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+
+    </section>
+    </main>
+
+    <!-- Включаем подвал -->
+    <footer class="site-footer">
+  <div class="cont-logo">
+  <div class="fot-logo">
+  <span>Aistedicasa</span>
+  </div>
+    <a href="https://api.whatsapp.com/send?phone=37068349117" target="_blank">+37068349117</a>
+    <a href="mailto:aistedicasa@gmail.com">aistedicasa@gmail.com</a>
+  </div>
+
+  <div class="footer-container">
+    <div class="fot-icon">
+      <a href="https://api.whatsapp.com/send?phone=37068349117"><img src="/foto/icon/whatsapp2.svg"></a>
+      <a href="https://www.facebook.com/share/1E3B2kHJ7f/?mibextid=wwXIfr"><img src="/foto/icon/facebook2.svg"></a>
+      <a href="#"><img src="/foto/icon/instagram2.svg"></a>
+    </div>
+
+    <nav class="footer-nav">
+      <ul class="footer-list">
+        <li><a href="/">Privatumo Politika</a></li>
+        <li><a href="/">Apie Mane</a></li>
+        <li><a href="/">Kontaktai</a></li>
+        <p>&copy; Aistedicasa</p>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+
+
+    <!-- Подключаем скрипты -->
+    <script src="/script/common.js"></script>
+</body>
+</html>

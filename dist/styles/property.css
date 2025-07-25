@@ -1,0 +1,163 @@
+.gallery {
+  width: 80%;
+  margin: 0 auto 40px;
+}
+.main-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+  background-color: #edebeb;
+}
+.thumbnails img {
+  width: 100px;
+  height: 75px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.thumbnails img.active {
+  border-color: #ccc;
+}
+
+.info-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.info-item {
+  text-align: center;
+}
+.info-item .label {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 4px;
+}
+.info-item .value {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+.info-item.price .value {
+  color: #000;
+  font-size: 1.1rem;
+}
+.contact-button {
+  padding: 10px 20px;
+  border: 1px solid #857154;
+  background: transparent;
+  color: #857154;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.contact-button:hover {
+  background: #857154;
+  color: #fff;
+}
+
+.descript {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.des-1block h1,
+.des-1block h3,
+.des-1block p {
+  margin-top: 20px;
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 60%;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.info-column {
+  margin-top: 10px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.info-column h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.info-column ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+.gallery {
+  width: 100%;
+}
+
+.descript {
+  width: 80%;
+}
+
+  .info-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #e3d6be;
+  }
+
+  .info-bar p {
+    color: white;
+  }
+
+  .info-item {
+    flex: 1 1 calc(50% - 10px);
+    box-sizing: border-box;
+  }
+
+
+  .button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .contact-button {
+    width: fit-content;
+    color: #FFF;
+    border: 1px solid #FFF;
+  }
+
+
+}
