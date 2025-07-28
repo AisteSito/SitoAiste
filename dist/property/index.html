@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <title>aistedicasa</title>
     <link rel="stylesheet" href="/styles/common.css">
     <style>
@@ -41,17 +42,25 @@
         </div>
       </div>
 
-      <nav class="main-nav">
-        <ul class="nav-list">
-          <li><a href="/" data-i18n="head1">Butai</a></li>
-          <li><a href="/" data-i18n="head2">Vilos</a></li>
-          <li><a href="/" data-i18n="head3">Nuoma</a></li>
-          <li><a href="/" data-i18n="head4">Kontaktai</a></li>
-          <li><a href="/" data-i18n="head5">Parduoti</a></li>
-          <li><a href="/" data-i18n="head6">Apie Mane</a></li>
-          <li><a href="/" data-i18n="head7">Publikacijos</a></li>
-        </ul>
-      </nav>
+<nav class="main-nav">
+  <ul class="nav-list">
+    
+
+    <li class="dropdown-item">
+      <a href="#" class="dropdown-toggle" data-i18n="head2">Parduodame</a>
+      <ul class="dropdown-contacts">
+        <li><a href="/list" data-i18n="head3">Butai</a></li>
+        <li><a href="/" data-i18n="head4">Vilos</a></li>
+      </ul>
+    </li>
+    <li><a href="/" data-i18n="head5">Nuoma</a></li>
+    <li><a href="/" data-i18n="head6">Parduota</a></li>
+    <li><a href="/" data-i18n="head7">Publikacijos</a></li>
+    <li><a href="/" data-i18n="head1">Apie Mane</a></li>
+    <li><a href="/" data-i18n="head8">Kontaktai</a></li>
+  </ul>
+</nav>
+
 
       <div class="burger-wrapper">
         <div class="burger-menu" onclick="toggleMenu()">
@@ -197,6 +206,59 @@
     </ul>
   </div>
 </section>
+<section class="contact-section">
+  <div class="contact-wrapper">
+    <div class="contact-person">      
+      <img src="/foto/agent.jpeg" alt="Aiste Bartkeviciene">
+      <div class="agent-info">
+      <div class="agen-info1">
+      <h3>Aiste Bartkeviciene</h3>
+      <p>AistediCasa įkūrėja</p>
+      </div>
+      <div class="agen-info1">
+      <a href="tel:+37068349117">+370 683 49117</a>
+      <p><a href="mailto:aistedicasa@gmail.com">aistedicasa@gmail.com</a></p>
+      </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Vardas *</label>
+          <input type="text" name="vardas" required>
+        </div>
+        <div class="form-group">
+          <label>Pavardė *</label>
+          <input type="text" name="pavarde" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>El. paštas *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Tel. numeris</label>
+          <input type="tel" name="phone">
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="form-group">
+          <label>Žinutė</label>
+          <textarea name="message" required></textarea>
+        </div>
+      </div>
+
+      <p class="form-note">Pateikdami šią formą, jūs sutinkate gauti komunikaciją iš AistediCasa.</p>
+      <button type="submit" class="submit-btn">Pateikti užklausą</button>
+    </form>
+  </div>
+</section>
+
+
 <script src="/script/property.js"></script>
     </main>
 

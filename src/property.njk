@@ -122,4 +122,57 @@ layout: layout.njk
     </ul>
   </div>
 </section>
+<section class="contact-section">
+  <div class="contact-wrapper">
+    <div class="contact-person">      
+      <img src="/foto/agent.jpeg" alt="Aiste Bartkeviciene">
+      <div class="agent-info">
+      <div class="agen-info1">
+      <h3>Aiste Bartkeviciene</h3>
+      <p>AistediCasa įkūrėja</p>
+      </div>
+      <div class="agen-info1">
+      <a href="tel:+37068349117">+370 683 49117</a>
+      <p><a href="mailto:aistedicasa@gmail.com">aistedicasa@gmail.com</a></p>
+      </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Vardas *</label>
+          <input type="text" name="vardas" required>
+        </div>
+        <div class="form-group">
+          <label>Pavardė *</label>
+          <input type="text" name="pavarde" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>El. paštas *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Tel. numeris</label>
+          <input type="tel" name="phone">
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="form-group">
+          <label>Žinutė</label>
+          <textarea name="message" required></textarea>
+        </div>
+      </div>
+
+      <p class="form-note">Pateikdami šią formą, jūs sutinkate gauti komunikaciją iš AistediCasa.</p>
+      <button type="submit" class="submit-btn">Pateikti užklausą</button>
+    </form>
+  </div>
+</section>
+
+
 <script src="/script/property.js"></script>

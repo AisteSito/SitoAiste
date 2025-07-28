@@ -103,3 +103,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".dropdown-toggle");
+    const dropdown = document.querySelector(".dropdown-contacts");
+
+    // Закрыть при клике вне
+    document.addEventListener("click", function (e) {
+      if (!toggle.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    // Тоггл по клику
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  

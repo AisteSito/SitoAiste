@@ -1,185 +1,58 @@
-
-
-.home-properties {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.property-card {
-  background-size: cover;
-  background-position: center;
+.center-line-block {
   position: relative;
-  margin-bottom: 50px;
-  width: 80%;
-  margin-top: 10px;
-  background-color: #B29575;
-  display: flex;
-  flex-direction: row;
-  height: 500px;
-  overflow: hidden;
-  color: white;
-
-}
-
-.property-content {
-  width: 35%;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #ccb28e;
-}
-
-.prop-down-sec {
-  justify-content: column;
-}
-
-.property-content h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: white;
-}
-
-.property-size,
-.property-price {
-  font-size: 0.9rem;
-  margin: 5px 0;
-  font-weight: 500;
-}
-
-.property-description {
-  font-size: 0.875rem;
-  margin: 15px 0;
-  line-height: 1.4;
-  color: white;
-}
-
-.property-buttons {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  width: fit-content;
-  border: 2px solid white;
-  margin-top: 15vh;
-}
-
-.btn-main {
-  padding: 10px 20px;
-  background-color: transparent;
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.btn-icon {
-  padding: 10px 16px;
-  background-color: transparent;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-left: 2px solid white;
+  width: 100%;
+  height: 80vh;
+  background: url('your-background.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s, color 0.3s;
 }
 
+/* Вертикальная белая линия */
+.center-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px; /* толщина линии */
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+/* Общий стиль кнопок */
+.side-btn {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 3px solid #ccb28e;
+  background: transparent;
+  color: #FFF;
+  transition: 0.3s;
+}
 
+.side-btn:hover {
+  background: #ccb28e;
+  color: #fff;
+}
 
+/* Левая кнопка */
+.left-btn {
+  right: 50%;
+  transform: translateX(-120%); /* отодвигаем влево от линии */
+}
 
-
-
-
+/* Правая кнопка */
+.right-btn {
+  left: 50%;
+  transform: translateX(120%); /* отодвигаем вправо от линии */
+}
 
 @media screen and (max-width: 768px) {
 
 
-.property-description {
-  display: none;
-}
-
-  .home-properties {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 30px 0;
-  }
-
-  .property-card {
-    position: relative;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 60vh;
-    overflow: hidden;
-  } 
-
-  .property-content {
-    flex-direction: column;
-    height: 20vh;
-    background-color: rgba(204, 178, 142, 0.7);
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: 2;
-  }
-
-
-  .property-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    font-weight: 100;
-  }
-
-  .prop-down-sec {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    box-sizing: border-box;
-  }
-
-  .property-size,
-  .property-price,
-  .property-description {
-    font-size: 0.9rem;
-    margin: 3px 0;
-  }
-
-  .property-buttons {
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-bottom: 20px;
-    margin-top: 0;
-  }
-
-  .btn-main,
-  .btn-icon {
-    padding: 4px 8px;
-    font-weight: 600;
-    color: white;
-    background: transparent;
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
-
-  .btn-icon {
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }

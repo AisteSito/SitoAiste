@@ -89,46 +89,36 @@
         color: #AAB3C4;
         transform: scale(1.05);
     }
-/* Стили для выпадающего блока */
+
 .dropdown-contacts {
-    display: none; /* Скрываем блок по умолчанию */
-    position: absolute;
-    top: 100%; /* Размещаем под пунктом меню */
-    right: 10px;
-    margin-top: 10px;
-    background-color: #fff;
-    padding: 15px;
-    z-index: 10;
-    width: 48vh; /* Фиксированная ширина */
-    font-size: 0.5rem; 
+  display: none;
+  position: absolute;
+  top: 100%; /* прямо под кнопкой */
+  right: 40%;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 0;
+  margin-top: 5px;
+  z-index: 1000;
+  min-width: 160px;
 }
 
-.dropdown-contacts .contact {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.dropdown-contacts img {
-    width: 16px;
-    height: 16px;
-    filter: brightness(0) saturate(100%) invert(21%) sepia(76%) saturate(3971%) hue-rotate(202deg) brightness(95%) contrast(97%);
+.dropdown-contacts li {
+  list-style: none;
 }
 
 .dropdown-contacts a {
-    text-decoration: none;
-    color: #333;
+  padding: 10px 15px;
+  display: block;
+  color: #000;
+  font-weight: 400;
 }
 
 .dropdown-contacts a:hover {
-    color: #44403C;
+        color: #AAB3C4;
+        transform: scale(1.05);
 }
 
-/* Активный класс для отображения выпадающего блока */
-.dropdown-item.active .dropdown-contacts {
-    display: block;
-}
 
 
 
@@ -146,7 +136,6 @@
             background-position: right 12px center;
             background-size: 16px;
             padding-right: 36px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: box-shadow 0.2s ease;
         }
 
