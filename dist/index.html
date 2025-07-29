@@ -88,13 +88,104 @@
     <main>
         
         <link rel="stylesheet" href="/styles/home.css">
-    <section id="home">
-<section class="center-line-block" style="background-image: url('/foto/galeri/1.webp');">
-  <div class="center-line"></div>
-  <button class="side-btn left-btn">BUTAI</button>
-  <button class="side-btn right-btn">NAMAI</button>
+<section id="home">
+  <section class="center-line-block" style="background-image: url('/foto/galeri/1.webp');">
+    <div class="overlay"></div>
+    <div class="center-line"></div>
+
+    <div class="buttons-wrap">
+      <div class="btn-column1">
+        <div class="up-info1">
+          <h1>Išsirinkite svajonių apartamentus</h1>
+          <p>22 Objektai</p>
+        </div>
+        <button class="side-btn left-btn"><a href="/list">BUTAI</a></button>
+      </div>
+
+      <div class="btn-column2">
+        <div class="up-info2">
+          <h1>Ieškantiems naujų namų</h1>
+          <p>72 Objektai</p>
+        </div>
+        <button class="side-btn right-btn"><a href="/list">NAMAI</a></button>
+      </div>
+    </div>
+  </section>
+<section class="descript">
+  <div class="des-1block">
+    <h1>
+      Aistedicasa
+    </h1>
+    <h2>
+      Real Estate
+    </h2>
+    <h3>KAIP MES SUPRANTAME KOKYBIŠKĄ PASLAUGOS ATLIKIMĄ?</h3>
+    <p>
+      Jūsų lūkestis yra aukšta kokybė ir nuoseklus aptarnavimas? Tai yra mūsų misija ir kasdienybė. 
+    </p>
+    <p>
+      Įsiklausome ir suprantame. Kuriame asmeninį ryšį ir bendraujame su Jumis be paslapčių. Nepaliekame Jūsų nežinioje. Prioritetą skiriame kokybei ir nuosekliam situacijos nagrinėjimui.
+    </p>
+  </div>
+  <div class="des-2block">
+    <p>
+        Mūsų stiprybė - parduodant objektus pabrėžti jų išskirtinumą ir atkreipti dėmesį ne tik kruopščiomis nuotraukomis, bet ir realiais privalumais. Norime, kad laimingi būtų ir pardavėjai, ir pirkėjai.
+    </p>
+  </div>
 </section>
-    </section>
+<section class="contact-section">
+  <div class="contact-wrapper">
+    <div class="contact-person">      
+      <img src="/foto/agent.jpeg" alt="Aiste Bartkeviciene">
+      <div class="agent-info">
+      <div class="agen-info1">
+      <h3>Aiste Bartkeviciene</h3>
+      <p>AistediCasa įkūrėja</p>
+      </div>
+      <div class="agen-info1">
+      <a href="tel:+37068349117">+370 683 49117</a>
+      <p><a href="mailto:aistedicasa@gmail.com">aistedicasa@gmail.com</a></p>
+      </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Vardas *</label>
+          <input type="text" name="vardas" required>
+        </div>
+        <div class="form-group">
+          <label>Pavardė *</label>
+          <input type="text" name="pavarde" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>El. paštas *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Tel. numeris</label>
+          <input type="tel" name="phone">
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="form-group">
+          <label>Žinutė</label>
+          <textarea name="message" required></textarea>
+        </div>
+      </div>
+
+      <p class="form-note">Pateikdami šią formą, jūs sutinkate gauti komunikaciją iš AistediCasa.</p>
+      <button type="submit" class="submit-btn">Pateikti užklausą</button>
+    </form>
+  </div>
+</section>
+</section>
+
     </main>
 
     <!-- Включаем подвал -->
