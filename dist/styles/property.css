@@ -149,7 +149,7 @@
 .contact-person img {
   width: 180px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 0px 20px 0px 10px;
 }
 
 .contact-person h3 {
@@ -319,6 +319,7 @@
 }
 
 .agent-info {
+  padding: 0px 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -327,7 +328,7 @@
 .contact-person img {
   width: 180px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 0px 20px 0px 10px;
 }
 
 .contact-form {

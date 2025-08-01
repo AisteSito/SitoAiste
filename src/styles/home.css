@@ -113,6 +113,33 @@
   align-self: flex-end; /* Прижимаем правый блок к нижней части */
 }
 
+
+.des-but {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 200;
+  border: 3px solid #ccb28e;
+  background: transparent;
+  color: #ccb28e;
+  width: 40vh;
+  height: 7vh;
+  transition: 0.3s easy;
+  text-decoration: none;
+  
+}
+.des-but:hover {
+  background: #ccb28e;
+  color: #fff;
+}
+
+.but-cont-sec {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 .contact-section {
   background-color: #EBE7E6;
   padding: 60px 20px;
@@ -144,7 +171,7 @@
 .contact-person img {
   width: 180px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 0px 40px 0px 10px;
 }
 
 .contact-person h3 {
@@ -290,15 +317,16 @@
 }
 
 .agent-info {
+  padding: 0px 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
 .contact-person img {
-  width: 180px;
+  width: 160px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 0px 20px 0px 10px;
 }
 
 .contact-form {
