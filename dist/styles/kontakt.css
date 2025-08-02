@@ -1,0 +1,89 @@
+
+.kont-properties {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+
+.kont-properties h2 {
+	padding: 30px 0px;
+	font-weight: 500;
+}
+
+.kont-foto {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 50px;
+  width: 80%;
+  margin-top: 10px;
+  background-color: #B29575;
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  overflow: hidden;
+  color: white;
+
+}
+
+
+.kont-info h3 {
+	margin-bottom: 20px;
+}
+
+.kont-call {
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.kont-call a {
+	text-decoration: none;
+	color: #44403C;
+	transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.kont-call a:hover {
+    color: #ccb28e;
+    transform: scale(1.05);
+} 
+
+.call-info {
+	color: #44403C;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.call-info a {
+	text-decoration: none;
+	color: #44403C;
+	transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.call-info a:hover {
+    color: #ccb28e;
+    transform: scale(1.05);
+} 
+
+
+@media screen and (max-width: 768px) {
+
+
+.kont-info {
+	width: 80%;
+	text-align: center;
+}
+
+.kont-call {
+	flex-direction: column;
+	gap: 5px;
+}
+
+} 
