@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: AisteSito/SitoAiste
+  branch: main
+
+media_folder: "src/foto/sold"
+public_folder: "/Foto/sold"
+
+collections:
+  - name: "announcements"
+    label: "объявления"
+    folder: "src/announcements"
+    create: true
+    slug: "{{fields.slug}}"
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Pavadinimas", name: "Name", widget: "string" }
+      - { label: "Plotas (M2)", name: "M2", widget: "string" }
+      - { label: "Aukštai", name: "TotalFloors", widget: "string" }
+      - { label: "Miegamieji", name: "Bedroom", widget: "string" }
+      - { label: "Sklypo plotas", name: "ZonaM2", widget: "string" }
+      - { label: "Vonios kamb.", name: "Bathroom", widget: "string" }
+      - { label: "Kaina", name: "Price", widget: "string" }
+      - { label: "Aprašymas", name: "descrizione", widget: "text" }
+      - { label: "Tekstas 1", name: "text1", widget: "text", required: }
+      - { label: "Tekstas 3", name: "text3", widget: "text", required: }
+      - { label: "Tekstas 4", name: "text4", widget: "text", required: }
+      - { label: "Finalinis tekstas", name: "textFinal", widget: "text", }
+      - label: "Nuotraukos"
+        name: "images"
+        widget: "list"
+        fields:
+          - { label: "Nuotrauka", name: "src", widget: "image" }
+          - { label: "Alt tekstas", name: "alt", widget: "string", }
