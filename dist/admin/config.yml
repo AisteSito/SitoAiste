@@ -22,9 +22,9 @@ collections:
       - { label: "Vonios kamb.", name: "Bathroom", widget: "string" }
       - { label: "Kaina", name: "Price", widget: "string" }
       - { label: "Aprašymas", name: "descrizione", widget: "text" }
-      - { label: "Tekstas 1", name: "text1", widget: "text", required: }
-      - { label: "Tekstas 3", name: "text3", widget: "text", required: }
-      - { label: "Tekstas 4", name: "text4", widget: "text", required: }
+      - { label: "Tekstas 1", name: "text1", widget: "text", }
+      - { label: "Tekstas 3", name: "text3", widget: "text", }
+      - { label: "Tekstas 4", name: "text4", widget: "text", }
       - { label: "Finalinis tekstas", name: "textFinal", widget: "text", }
       - label: "Nuotraukos"
         name: "images"
