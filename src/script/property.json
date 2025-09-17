@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "1",
+    "Name": "PARDUODAMA VILA SU SODELIU BAIA DEL CARPINO, SKALEJOJE!",
+    "M2": "60 kv.m",
+    "TotalFloors": "1",
+    "Bedroom": "2",
+    "ZonaM2": "70 kv.m",
+    "Bathroom": "1",
+    "Price": "129 000 €",
+    "descrizione": "Ieskote jaukios vietos prie juros? Si vila — puikus pasirinkimas tiek poilsiui, tiek investicijai!",
+    "text1": "Terasa (patio) — 70 kv. m, atsiveria i juros puse, puikiai tinka pasimegauti saulelydziais.",
+    "text3": "Vidinis kiemas su terasa — 100 kv. m, suteikiantis privatuma ir erdves laisvalaikiui.",
+    "text4": "Atskiras iejimas — daugiau privatumo ir patogumo. ",
+    "textFinal": "Apziuros galimos tik nuo rugpjucio pabaigos.",
+    "images": [
+      {
+        "src": "/foto/villa/2 (8).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (2).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (3).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (4).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (5).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (6).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (7).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (1).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (9).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (10).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (11).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (12).webp",
+        "alt": "villa in italy"
+      },
+      {
+        "src": "/foto/villa/2 (13).webp",
+        "alt": "villa in italy"
+      }
+    ]
+  },
+  {
+    "slug": "",
+    "Name": "",
+    "M2": "",
+    "TotalFloors": "",
+    "Bedroom": "",
+    "ZonaM2": "",
+    "Bathroom": "",
+    "Price": "",
+    "descrizione": "",
+    "text1": "",
+    "text3": "",
+    "text4": "",
+    "textFinal": "",
+    "images": [
+      {
+        "src": "",
+        "alt": ""
+      }
+    ]
+  }
+]

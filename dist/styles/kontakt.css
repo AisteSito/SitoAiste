@@ -5,51 +5,67 @@
   align-items: center;
   display: flex;
 }
-
-
 .kont-properties h2 {
-	padding: 30px 0px;
-	font-weight: 500;
+	margin-top: 20px;
 }
 
-.kont-foto {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  margin-bottom: 50px;
-  width: 80%;
-  margin-top: 10px;
-  background-color: #B29575;
+.kont-block {
   display: flex;
   flex-direction: row;
-  height: 500px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9; /* вместо красного */
+  border-radius: 5px;
   overflow: hidden;
-  color: white;
-
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  margin-top: 40px;
 }
 
+/* Левая колонка с текстом */
+.kont-info {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+/* Правая колонка с фото */
+.kont-foto {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  height: 100%; 
+  min-height: 400px;
+}
+
+/* Заголовок */
 .kont-info h3 {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
 }
 
+/* Контакты */
 .kont-call {
-	display: flex;
-	flex-direction: row;
-	gap: 25px;
-	text-align: center;
-	margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .kont-call a {
-	text-decoration: none;
-	color: #44403C;
-	transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  color: #44403C;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .kont-call a:hover {
-    color: #ccb28e;
-    transform: scale(1.05);
+  color: #ccb28e;
+  transform: scale(1.05);
 } 
 
 .call-info {
@@ -57,8 +73,8 @@
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
-	justify-content: center;
-	margin-bottom: 20px;
+	justify-content: left;
+	margin-top: 40px;
 }
 
 .call-info a {
@@ -74,16 +90,27 @@
 
 
 @media screen and (max-width: 768px) {
+  .kont-block {
+    flex-direction: column;
+  }
 
+  .kont-info {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
 
-.kont-info {
-	width: 80%;
-	text-align: center;
-}
+  .kont-foto {
+    width: 100%;
+    min-height: 250px;
+  }
 
-.kont-call {
-	flex-direction: column;
-	gap: 5px;
-}
+  .kont-call {
+    flex-direction: column;
+    gap: 10px;
+  }
 
+  .call-info {
+    align-items: center;
+  }
 } 
