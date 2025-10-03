@@ -3,6 +3,12 @@ backend:
   repo: AisteSito/AisteCMS
   branch: main
 
+# Обязательно указываем media_folder и media_library
+media_folder: "media" # Это корневая папка для всех фото (можно оставить пустой, но Netlify CMS требует)
+media_library:
+  config:
+    allowMultiple: true
+
 collections:
   - name: "villa"
     label: "Вилы"
