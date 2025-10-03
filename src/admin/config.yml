@@ -4,11 +4,8 @@ backend:
   branch: main
 
 # Обязательно указываем media_folder и media_library
-media_folder: "media" # Это корневая папка для всех фото (можно оставить пустой, но Netlify CMS требует)
-media_library:
-  name: "Media Library"
-  config:
-    allowMultiple: true
+media_folder: "uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "villa"
