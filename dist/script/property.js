@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Получаем slug и источник (?src=sold&slug=xxx)
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
-  const src = params.get("src") || "property"; // по умолчанию property
+  const src = params.get("src") || "villa";
 
-  fetch(`/script/${src}.json`)
+  const allowedFolders = ["villa", "sold", "rent", "appart"];
+  if (!allowedFolders.includes(src)) {
+    document.body.innerHTML = "<h2>Invalid source folder</h2>";
+    return;
+  }
+
+  fetch(`https://raw.githubusercontent.com/AisteSito/AisteCMS/main/${src}/${src}.json`)
     .then(res => res.json())
     .then(data => {
       const property = data.find(item => item.slug === slug);
@@ -12,24 +17,27 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.innerHTML = "<h2>Property not found</h2>";
         return;
       }
-      renderProperty(property);
+      renderProperty(property, src);
     })
     .catch(err => console.error("Ошибка загрузки JSON:", err));
 
-  function renderProperty(prop) {
-    // Галерея
+  function renderProperty(prop, folder) {
     const mainPhoto = document.querySelector(".main-photo img");
     const thumbsContainer = document.querySelector(".thumbnails");
     const prevBtn = document.querySelector(".gallery-arrow.left");
     const nextBtn = document.querySelector(".gallery-arrow.right");
 
     let currentIndex = 0;
-    mainPhoto.src = prop.images[currentIndex].src;
+
+    // Убираем лишние пробелы и кодируем путь
+    const firstImage = prop.images[currentIndex].src;
+    mainPhoto.src = `https://raw.githubusercontent.com/AisteSito/AisteCMS/main/${folder}/${encodeURIComponent(firstImage)}`;
     thumbsContainer.innerHTML = "";
 
     prop.images.forEach((img, index) => {
       const thumb = document.createElement("img");
-      thumb.src = img.src;
+      const imagePath = img.src;
+      thumb.src = `https://raw.githubusercontent.com/AisteSito/AisteCMS/main/${folder}/${encodeURIComponent(imagePath)}`;
       thumb.alt = img.alt || "photo";
       if (index === 0) thumb.classList.add("active");
       thumb.addEventListener("click", () => {
@@ -39,15 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
       thumbsContainer.appendChild(thumb);
     });
 
-    // Функция обновления галереи
     function updateGallery() {
-      mainPhoto.src = prop.images[currentIndex].src;
+      const currentImage = prop.images[currentIndex].src;
+      mainPhoto.src = `https://raw.githubusercontent.com/AisteSito/AisteCMS/main/${folder}/${encodeURIComponent(currentImage)}`;
       document.querySelectorAll(".thumbnails img").forEach((img, i) => {
         img.classList.toggle("active", i === currentIndex);
       });
     }
 
-    // Кнопки навигации
     prevBtn.addEventListener("click", () => {
       currentIndex = (currentIndex - 1 + prop.images.length) % prop.images.length;
       updateGallery();
@@ -58,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
       updateGallery();
     });
 
-    // Инфо-блок
     const infoBar = document.getElementById("info-bar");
     infoBar.innerHTML = `
       <div class="info-item"><p class="label">Plotas</p><p class="value">${prop.M2}</p></div>
@@ -70,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="button-wrapper"><a href="tel:+37068349117"><button class="contact-button">Susisiekite</button></a></div>
     `;
 
-    // Описание
     const descBlock = document.getElementById("description-block");
     descBlock.innerHTML = `
       <h1>${prop.Name}</h1>

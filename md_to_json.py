@@ -55,3 +55,4 @@ def update_json():
 if __name__ == "__main__":
     update_json()
     print("✅ property.json обновлен из md файлов")
+    
