@@ -1,17 +1,17 @@
 backend:
-  name: github
-  repo: AisteSito/SitoAiste
+  name: git-gateway
+  repo: AisteSito/AisteCMS
   branch: main
 
-media_folder: "src/foto/sold"
-public_folder: "/Foto/sold"
-
 collections:
-  - name: "announcements"
-    label: "объявления"
-    folder: "src/announcements"
+  - name: "villa"
+    label: "Вилы"
+    folder: "villa"
     create: true
-    slug: "{{fields.slug}}"
+    slug: "{{slug}}"
+    # Фото будут сохраняться в ту же папку, что и md-файл
+    media_folder: ""  # Пустая строка — фото в той же папке
+    public_folder: "" # Пустая строка — публичный путь такой же
     fields:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Pavadinimas", name: "Name", widget: "string" }
@@ -22,13 +22,97 @@ collections:
       - { label: "Vonios kamb.", name: "Bathroom", widget: "string" }
       - { label: "Kaina", name: "Price", widget: "string" }
       - { label: "Aprašymas", name: "descrizione", widget: "text" }
-      - { label: "Tekstas 1", name: "text1", widget: "text", }
-      - { label: "Tekstas 3", name: "text3", widget: "text", }
-      - { label: "Tekstas 4", name: "text4", widget: "text", }
-      - { label: "Finalinis tekstas", name: "textFinal", widget: "text", }
+      - { label: "Tekstas 1", name: "text1", widget: "text" }
+      - { label: "Tekstas 3", name: "text3", widget: "text" }
+      - { label: "Tekstas 4", name: "text4", widget: "text" }
+      - { label: "Finalinis tekstas", name: "textFinal", widget: "text" }
       - label: "Nuotraukos"
         name: "images"
         widget: "list"
         fields:
           - { label: "Nuotrauka", name: "src", widget: "image" }
-          - { label: "Alt tekstas", name: "alt", widget: "string", }
+          - { label: "Alt tekstas", name: "alt", widget: "string" }
+
+  - name: "appart"
+    label: "Квартиры"
+    folder: "appart"
+    create: true
+    slug: "{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Pavadinimas", name: "Name", widget: "string" }
+      - { label: "Plotas (M2)", name: "M2", widget: "string" }
+      - { label: "Aukštai", name: "TotalFloors", widget: "string" }
+      - { label: "Miegamieji", name: "Bedroom", widget: "string" }
+      - { label: "Sklypo plotas", name: "ZonaM2", widget: "string" }
+      - { label: "Vonios kamb.", name: "Bathroom", widget: "string" }
+      - { label: "Kaina", name: "Price", widget: "string" }
+      - { label: "Aprašymas", name: "descrizione", widget: "text" }
+      - { label: "Tekstas 1", name: "text1", widget: "text" }
+      - { label: "Tekstas 3", name: "text3", widget: "text" }
+      - { label: "Tekstas 4", name: "text4", widget: "text" }
+      - { label: "Finalinis tekstas", name: "textFinal", widget: "text" }
+      - label: "Nuotraukos"
+        name: "images"
+        widget: "list"
+        fields:
+          - { label: "Nuotrauka", name: "src", widget: "image" }
+          - { label: "Alt tekstas", name: "alt", widget: "string" }
+
+  - name: "rent"
+    label: "Сдача"
+    folder: "rent"
+    create: true
+    slug: "{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Pavadinimas", name: "Name", widget: "string" }
+      - { label: "Plotas (M2)", name: "M2", widget: "string" }
+      - { label: "Aukštai", name: "TotalFloors", widget: "string" }
+      - { label: "Miegamieji", name: "Bedroom", widget: "string" }
+      - { label: "Sklypo plotas", name: "ZonaM2", widget: "string" }
+      - { label: "Vonios kamb.", name: "Bathroom", widget: "string" }
+      - { label: "Kaina", name: "Price", widget: "string" }
+      - { label: "Aprašymas", name: "descrizione", widget: "text" }
+      - { label: "Tekstas 1", name: "text1", widget: "text" }
+      - { label: "Tekstas 3", name: "text3", widget: "text" }
+      - { label: "Tekstas 4", name: "text4", widget: "text" }
+      - { label: "Finalinis tekstas", name: "textFinal", widget: "text" }
+      - label: "Nuotraukos"
+        name: "images"
+        widget: "list"
+        fields:
+          - { label: "Nuotrauka", name: "src", widget: "image" }
+          - { label: "Alt tekstas", name: "alt", widget: "string" }
+
+  - name: "sold"
+    label: "Продажа"
+    folder: "sold"
+    create: true
+    slug: "{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Pavadinimas", name: "Name", widget: "string" }
+      - { label: "Plotas (M2)", name: "M2", widget: "string" }
+      - { label: "Aukštai", name: "TotalFloors", widget: "string" }
+      - { label: "Miegamieji", name: "Bedroom", widget: "string" }
+      - { label: "Sklypo plotas", name: "ZonaM2", widget: "string" }
+      - { label: "Vonios kamb.", name: "Bathroom", widget: "string" }
+      - { label: "Kaina", name: "Price", widget: "string" }
+      - { label: "Aprašymas", name: "descrizione", widget: "text" }
+      - { label: "Tekstas 1", name: "text1", widget: "text" }
+      - { label: "Tekстас 3", name: "text3", widget: "text" }
+      - { label: "Tekстас 4", name: "text4", widget: "text" }
+      - { label: "Finalinis tekstas", name: "textFinal", widget: "text" }
+      - label: "Nuotraukos"
+        name: "images"
+        widget: "list"
+        fields:
+          - { label: "Nuotrauka", name: "src", widget: "image" }
+          - { label: "Alt tekstas", name: "alt", widget: "string" }
