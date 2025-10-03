@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("properties-container");
 
-  fetch("https://raw.githubusercontent.com/AisteSito/AisteCMS/main/villa/property.json")
+  fetch("https://raw.githubusercontent.com/AisteSito/AisteCMS/main/villa/villa.json")
     .then((res) => res.json())
     .then((data) => {
       renderProperties(data);

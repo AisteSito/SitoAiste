@@ -1,45 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("properties-container");
 
-  // Загружаем JSON
-  fetch("/script/rent.json") // путь к твоему JSON файлу
+  fetch("https://raw.githubusercontent.com/AisteSito/AisteCMS/main/rent/rent.json")
     .then((res) => res.json())
     .then((data) => {
       renderProperties(data);
     })
     .catch((err) => {
-      console.error("Ошибка загрузки JSON:", err);
+      console.error("Ошибка загрузки JSON (rent):", err);
     });
 
-  // Функция отрисовки
-function renderProperties(properties) {
-  container.innerHTML = ""; // очищаем контейнер
+  function renderProperties(properties) {
+    container.innerHTML = ""; // очищаем контейнер
 
-  properties.forEach((prop) => {
-    const card = document.createElement("div");
-    card.classList.add("property-card");
-    card.style.backgroundImage = `url('${prop.images[0].src}')`;
+    properties.forEach((prop) => {
+      const card = document.createElement("div");
+      card.classList.add("property-card");
 
-    card.innerHTML = `
-      <div class="property-content">
-        <div class="property-text">
-          <h3>${prop.Name}</h3>
-          <p class="property-description">${prop.descrizione}</p>
-        </div>
-        <div class="prop-down-sec">
-          <div>
-            <p class="property-size">${prop.M2}</p>
-            <p class="property-price">${prop.Price}</p>
+      // Убираем "/foto/rent/" из пути — фото лежат в корне папки rent
+      const firstImage = prop.images[0].src.replace("/foto/rent/", "");
+      card.style.backgroundImage = `url('https://raw.githubusercontent.com/AisteSito/AisteCMS/main/rent/${encodeURIComponent(firstImage)}')`;
+
+      card.innerHTML = `
+        <div class="property-content">
+          <div class="property-text">
+            <h3>${prop.Name}</h3>
+            <p class="property-description">${prop.descrizione}</p>
           </div>
-          <div class="property-buttons">
-            <a class="btn-main" href="/property/?src=rent&slug=${prop.slug}">Plačiau</a>
-            <a class="btn-icon" href="/property/?src=rent&slug=${prop.slug}">&#8594;</a>
+          <div class="prop-down-sec">
+            <div>
+              <p class="property-size">${prop.M2}</p>
+              <p class="property-price">${prop.Price}</p>
+            </div>
+            <div class="property-buttons">
+              <a class="btn-main" href="/property/?slug=${prop.slug}&src=rent">Plačiau</a>
+              <a class="btn-icon" href="/property/?slug=${prop.slug}&src=rent">&#8594;</a>
+            </div>
           </div>
         </div>
-      </div>
-    `;
+      `;
 
-    container.appendChild(card);
-  });
- }
+      container.appendChild(card);
+    });
+  }
 });

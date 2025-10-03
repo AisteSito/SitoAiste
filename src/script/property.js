@@ -1,4 +1,3 @@
-// property.js (исправленная версия)
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
@@ -19,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return clean.split("/").map(encodeURIComponent).join("/");
   }
 
-  const jsonUrl = `${RAW_BASE}/${src}/property.json`;
+  // Теперь все папки используют {src}.json
+  const jsonUrl = `${RAW_BASE}/${src}/${src}.json`;
   fetch(jsonUrl)
     .then(res => {
       if (!res.ok) {
