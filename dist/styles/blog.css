@@ -1,0 +1,110 @@
+.blog-categories {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Карточка категории */
+.category-card {
+  position: relative;
+  width: 32%;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Полупрозрачный оверлей */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+  padding: 20px;
+  color: white;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.category-card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+}
+
+/* Заголовок */
+.card-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Количество объектов */
+.card-overlay p:first-of-type {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+
+/* Описание */
+.card-overlay p:last-of-type {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* Кнопка */
+.btn-read-more {
+  display: inline-block;
+  padding: 8px 16px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn-read-more:hover {
+  background: #fff;
+  color: #333;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .blog-categories {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .category-card {
+    width: 100%;
+    height: 300px;
+  }
+
+  .card-overlay h2 {
+    font-size: 1.5rem;
+  }
+}
