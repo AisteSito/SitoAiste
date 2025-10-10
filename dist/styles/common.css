@@ -9,7 +9,7 @@
 
     body {
         margin-top: 13vh;
-        font-family: 'Poppins';
+        font-family: 'Poppins' sans-serif;
     }
 
     /* Шапка */
@@ -93,7 +93,7 @@
   display: none;
   position: absolute;
   top: 100%; /* прямо под кнопкой */
-  right: 40%;
+  right: 52%;
   background-color: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 0;
@@ -155,82 +155,70 @@
     /* Подвал */
 
 .site-footer {
-    background-color: #ccb28e;
-    padding: 20px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-
-.fot-logo {
-    color: #FFF;
-    font-size: 1.5rem;
-}    
-.cont-logo {
-    display: flex;
-    align-items: center;
-    margin-left: 100px;
-    gap: 5px;
-    flex-direction: column;
-}
-
-.cont-logo a {
-    text-decoration: none;
-    color: #FFF;
-    font-size: 0.875rem;
+  background-color: #ccb28e;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start; /* Оставляем, чтобы внутренние блоки не тянулись по высоте */
+  justify-content: center; /* Центрируем все .footer-container по горизонтали */
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-left: auto;
-    min-width: 230px;
-    margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем содержимое внутри каждого блока */
+  min-width: 230px;
+  justify-content: center;
 }
 
-.fot-icon {
-    display: flex;
-    gap: 30px;
+.footer-container span {
+    font-size: 1.8rem;
+    color: #FFF;
     margin-bottom: 10px;
 }
 
+.fot-icon {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
 .fot-icon img {
-    width: 25px;
-    filter: brightness(0) invert(1);
+  width: 25px;
+  filter: brightness(0) invert(1);
 }
 
 .fot-icon a {
-    display: flex;
-    align-items: center;
-}    
+  display: flex;
+  align-items: center;
+}
 
 .footer-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
 }
 
 .footer-list li a {
-    text-decoration: none;
-    color: #FFF;
-    transition: transform 0.3s ease;
+  text-decoration: none;
+  color: #FFF;
+  transition: transform 0.3s ease;
 }
 
 .footer-list li a:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .footer-container p {
-    margin-top: 10px;
-    font-size: 0.75rem;
-    color: #FFF;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #FFF;
+  text-align: center; /* Выравнивание текста внутри параграфа по центру */
 }
 
 
@@ -335,17 +323,5 @@
     .burger-whatsapp img {
         filter: brightness(0) saturate(100%) invert(21%) sepia(76%) saturate(3971%) hue-rotate(202deg) brightness(95%) contrast(97%);
     }
-
-
-
-    .site-footer {
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .footer-container {
-        display: none;
-    }
-
+    
 }

@@ -77,10 +77,10 @@
 }
 .contact-button {
   padding: 10px 20px;
-  border: 1px solid #857154;
+  border: 3px solid #857154;
   background: transparent;
   color: #857154;
-  font-size: 1rem;
+  font-size: 1.3rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }

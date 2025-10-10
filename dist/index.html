@@ -20,10 +20,26 @@
     <header class="site-header">
   <div class="header-container">
     <a href="/" class="logo">
-    <span>Aistedicasa</span>
+    <span>Aiste di Casa</span>
     </a>
 
     <div class="right-block">
+<nav class="main-nav">
+  <ul class="nav-list">
+    <li class="dropdown-item">
+      <a href="#" class="dropdown-toggle" data-i18n="head2">Parduodame</a>
+      <ul class="dropdown-contacts">
+        <li><a href="/appart" data-i18n="head3">Butai</a></li>
+        <li><a href="/villa" data-i18n="head4">Vilos</a></li>
+      </ul>
+    </li>
+    <li><a href="/rent" data-i18n="head5">Nuoma</a></li>
+    <li><a href="/sold" data-i18n="head6">Kitos paslaugos</a></li>
+    <li><a href="/" data-i18n="head7">Publikacijos</a></li>
+    <li><a href="/" data-i18n="head1">Apie Mane</a></li>
+    <li><a href="/kontakt" data-i18n="head8">Kontaktai</a></li>
+  </ul>
+</nav>
       <div class="lang-fab">
         <div class="language-selector">
           <label for="lang-switcher" class="visually-hidden">Select language</label>
@@ -42,26 +58,6 @@
         </div>
       </div>
 
-<nav class="main-nav">
-  <ul class="nav-list">
-    
-
-    <li class="dropdown-item">
-      <a href="#" class="dropdown-toggle" data-i18n="head2">Parduodame</a>
-      <ul class="dropdown-contacts">
-        <li><a href="/appart" data-i18n="head3">Butai</a></li>
-        <li><a href="/villa" data-i18n="head4">Vilos</a></li>
-      </ul>
-    </li>
-    <li><a href="/rent" data-i18n="head5">Nuoma</a></li>
-    <li><a href="/sold" data-i18n="head6">Parduota</a></li>
-    <li><a href="/" data-i18n="head7">Publikacijos</a></li>
-    <li><a href="/" data-i18n="head1">Apie Mane</a></li>
-    <li><a href="/kontakt" data-i18n="head8">Kontaktai</a></li>
-  </ul>
-</nav>
-
-
       <div class="burger-wrapper">
         <div class="burger-menu" onclick="toggleMenu()">
           <div></div><div></div><div></div>
@@ -74,7 +70,7 @@
           <li><a href="/villa" data-i18n="head2">Vilos</a></li>
           <li><a href="/rent" data-i18n="head3">Nuoma</a></li>
           <li><a href="/kontakt" data-i18n="head4">Kontaktai</a></li>
-          <li><a href="/sold" data-i18n="head5">Parduota</a></li>
+          <li><a href="/sold" data-i18n="head5">Kitos paslaugos</a></li>
           <li><a href="/" data-i18n="head6">Apie Mane</a></li>
           <li><a href="/" data-i18n="head7">Publikacijos</a></li>
     </ul>
@@ -89,21 +85,19 @@
         
         <link rel="stylesheet" href="/styles/home.css">
 <section id="home">
-  <section class="center-line-block" style="background-image: url('/foto/galeri/9.webp');">
-    <div class="overlay"></div>
-
+  <section class="center-line-block">
+    <div class="overlay">
+      <h1>Išsirinkite savo svajonių namus</h1>
+    </div>
     <div class="buttons-wrap">
       <div class="btn-column1">
         <div class="up-info1">
-          <h1>Išsirinkite svajonių apartamentus</h1>
           <p>22 Objektai</p>
         </div>
-        <button class="side-btn left-btn"><a href="/list">BUTAI</a></button>
+        <button class="side-btn left-btn"><a href="/appart">BUTAI</a></button>
       </div>
-
       <div class="btn-column2">
         <div class="up-info2">
-          <h1>Ieškantiems naujų namų</h1>
           <p>72 Objektai</p>
         </div>
         <button class="side-btn right-btn"><a href="/villa">VILOS</a></button>
@@ -111,8 +105,11 @@
     </div>
   </section>
 <section class="descript">
+    <div class="contact-person">      
+      <img src="/foto/agent.webp" alt="Aistė Bartkevičienė">
+    </div>
   <div class="des-1block">
-    <h1>Aistedicasa</h1>
+    <h1>Aiste di Casa</h1>
     <h2>Atraskite savo namus Pietų Italijoje</h2>
     <p>Esu Aistė Bartkevičienė – sertifikuota nekilnojamojo turto brokerė, gyvenanti ir dirbanti Pietų Italijoje, regione, kuris tapo mano antraisiais namais.</p>
     <p>Dirbu tik pirkėjų naudai – 100 %. Rekomenduoju tik tai, kuo pati tikiu. Atrenkami objektai – tik tie, kurie turi realią vertę ir potencialą tapti jūsų namais arba protinga investicija.</p>
@@ -123,24 +120,10 @@
   </div>
 </section>
 <div class="but-cont-sec">
-<a class="des-but" href="/list">Plačiau apie mane</a>
+<a class="des-but" href="/#">Plačiau apie mane</a>
 </div>
 <section class="contact-section">
   <div class="contact-wrapper">
-    <div class="contact-person">      
-      <img src="/foto/agent.webp" alt="Aistė Bartkevičienė">
-      <div class="agent-info">
-      <div class="agen-info1">
-      <h3>Aistė Bartkevičienė</h3>
-      <p>AistediCasa įkūrėja</p>
-      </div>
-      <div class="agen-info1">
-      <a href="tel:+37068349117">+370 683 49117</a>
-      <p><a href="mailto:aistedicasa@gmail.com">aistedicasa@gmail.com</a></p>
-      </div>
-      </div>
-    </div>
-
     <form class="contact-form" id="contactForm">
       <div class="form-row">
         <div class="form-group">
@@ -182,27 +165,18 @@
 
     <!-- Включаем подвал -->
     <footer class="site-footer">
-  <div class="cont-logo">
-  <div class="fot-logo">
-  <span>Aistedicasa</span>
-  </div>
-    <a href="https://api.whatsapp.com/send?phone=37068349117" target="_blank">+37068349117</a>
-    <a href="mailto:aistedicasa@gmail.com">aistedicasa@gmail.com</a>
-  </div>
-
   <div class="footer-container">
+  <span>Aiste di Casa</span>
     <div class="fot-icon">
       <a href="https://api.whatsapp.com/send?phone=37068349117"><img src="/foto/icon/whatsapp2.svg"></a>
       <a href="https://www.facebook.com/share/1E3B2kHJ7f/?mibextid=wwXIfr"><img src="/foto/icon/facebook2.svg"></a>
-      <a href="#"><img src="/foto/icon/instagram2.svg"></a>
     </div>
-
     <nav class="footer-nav">
       <ul class="footer-list">
         <li><a href="/">Privatumo Politika</a></li>
         <li><a href="/">Apie Mane</a></li>
         <li><a href="/kontakt">Kontaktai</a></li>
-        <p>&copy; Aistedicasa</p>
+        <p>&copy; Aiste di Casa</p>
       </ul>
     </nav>
   </div>

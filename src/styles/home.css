@@ -2,13 +2,15 @@
   position: relative;
   width: 100%;
   height: 90vh;
+  background-image: url('/foto/galeri/14.webp'); /* Убедись, что путь правильный */
   background-size: cover;
   background-position: center;
-  position: relative;
-  background: cover / no-repeat;
+  background-repeat: no-repeat;
   display: flex;
+  flex-direction: column; /* Важно: чтобы контент шёл сверху вниз */
+  justify-content: flex-end; /* Контент прижат к низу */
   align-items: center;
-  justify-content: center;
+  padding-bottom: 20px; /* Отступ снизу для кнопок */
 }
 
 .overlay {
@@ -16,27 +18,44 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 35%; /* Закрывает верхнюю половину */
-  background-color: rgba(0, 0, 0, 0.5); /* Черный с прозрачностью */
+  height: 35%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
 }
 
-/* Контейнер с двумя колонками */
+.overlay h1 {
+  color: #FFF;
+  font-size: 1.8rem;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 15vh;
+}
+
 .buttons-wrap {
   display: flex;
   justify-content: center;
-  width: 100%;
-  padding: 0 10%; /* Уменьшите отступы, если нужно */
-  margin-top: auto;
-  margin-bottom: 8vh;
   gap: 20px;
+  width: 100%;
+  padding: 0 10%;
   z-index: 10;
 }
 
-.btn-column1 {
-  text-align: right;
-}
+.btn-column1,
 .btn-column2 {
-  margin-right: 87px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.up-info1,
+.up-info2 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
 .up-info1 h1,
@@ -46,10 +65,6 @@
   margin: 0;
 }
 
-.up-info1,
-.up-info2 {
-  color: white;
-}
 
 .side-btn {
   cursor: pointer;
@@ -76,36 +91,68 @@
 
 .descript {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  max-width: 900px;
+  flex-direction: row;
+  justify-content: space-between; /* Вместо space-around — более предсказуемо */
+  align-items: flex-start; /* Все элементы начинаются сверху */
+  width: 90%;
   margin: 0 auto;
+  margin-top: 10vh;
   padding: 20px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  gap: 20px;
+  gap: 30px;
+  flex-wrap: wrap; /* Адаптивность */
 }
 
-.descript h1 {
+/* Картинка агента */
+.contact-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 200px; /* Фиксированная ширина для изображения */
+}
+
+.contact-person img {
+  width: 180px;
+  margin-bottom: 15px;
+}
+
+/* Левый блок с заголовками и текстом */
+.des-1block {
+  flex: 1;
+  min-width: 300px;
+}
+
+.des-1block h1 {
   font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
-.descript h2 {
+.des-1block h2 {
   font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #555;
 }
 
-.descript h3 {
-  font-size: 1rem;
+.des-1block p {
+  margin-top: 10px;
+  line-height: 1.6;
 }
 
-.descript p {
-  margin-top: 20px;
-}
+/* Правый блок текста */
 .des-2block {
-  align-self: flex-end; /* Прижимаем правый блок к нижней части */
+  flex: 1;
+  min-width: 300px;
 }
 
+.des-2block p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
 
+/* Кнопка */
 .des-but {
   padding: 10px 20px;
   cursor: pointer;
@@ -114,22 +161,27 @@
   border: 3px solid #ccb28e;
   background: transparent;
   color: #ccb28e;
-  width: 40vh;
-  height: 7vh;
-  transition: 0.3s easy;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  transition: 0.3s ease;
   text-decoration: none;
-  
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  border-radius: 1px;
 }
+
 .des-but:hover {
   background: #ccb28e;
   color: #fff;
 }
 
+/* Контейнер кнопки — центрирование */
 .but-cont-sec {
+  width: 100%;
   text-align: center;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
+  padding: 20px 0;
 }
 
 .contact-section {
@@ -144,45 +196,13 @@
   max-width: 80%;
   margin: 0 auto;
   gap: 60px;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.contact-person {
-  text-align: left;
-  flex-direction: row;
-  display: flex;
-
-}
-
-.agen-info1 {
-  padding: 10px 0px 0px 30px;
-}
-
-.contact-person img {
-  width: 180px;
-  margin-bottom: 20px;
-}
-
-.contact-person h3 {
-  font-size: 18px;
-  margin: 10px 0 5px;
-}
-
-.contact-person p {
-  margin: 4px 0;
-  color: #333;
-  text-decoration: none;
-}
-
-.contact-person a {
-  text-decoration: none;
-  color: #44403C;
+  justify-content: center;
 }
 
 .contact-form {
-  width: 50%;
+  width: 60%;
 }
 
 .form-row {
@@ -256,6 +276,10 @@
   display: none;
 }
 
+.overlay h1 {
+  margin-bottom: 28vh;
+  font-size: 1.4rem;
+}
 
 .buttons-wrap {
   flex-direction: column; /* Изменяем направление на column */
@@ -300,18 +324,6 @@
   text-align: left;
   flex-direction: row;
   display: flex;
-}
-
-.agen-info1 {
-  padding: 0px;
-  margin-bottom: 20px;
-}
-
-.agent-info {
-  padding: 0px 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 .contact-person img {

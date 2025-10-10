@@ -100,18 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Инфо-блок
-    const infoBar = document.getElementById("info-bar");
-    infoBar.innerHTML = `
-      <div class="info-item"><p class="label">Plotas</p><p class="value">${prop.M2 || ""}</p></div>
-      <div class="info-item"><p class="label">Aukštai</p><p class="value">${prop.TotalFloors || ""}</p></div>
-      <div class="info-item"><p class="label">Miegamieji</p><p class="value">${prop.Bedroom || ""}</p></div>
-      <div class="info-item"><p class="label">Sklypo plotas</p><p class="value">${prop.ZonaM2 || ""}</p></div>
-      <div class="info-item"><p class="label">Vonios k.</p><p class="value">${prop.Bathroom || ""}</p></div>
-      <div class="info-item price"><p class="label">Kaina</p><p class="value">${prop.Price || ""}</p></div>
-      <div class="button-wrapper"><a href="tel:+37068349117"><button class="contact-button">Susisiekite</button></a></div>
-    `;
-
     // Описание
     const descBlock = document.getElementById("description-block");
     descBlock.innerHTML = `
