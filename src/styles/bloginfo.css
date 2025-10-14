@@ -1,0 +1,89 @@
+        .hero-section1 {
+            width: 100%; /* Растягиваем на всю ширину экрана */
+            display: flex;
+            flex-direction: column; /* Всё идёт в столбик */
+            align-items: center; /* Центрируем контент */           
+        }
+        .center-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 0px;
+            background-color: rgba(255, 255, 255, 0.9);  
+            width: 100%;
+
+        }    
+        .center {      
+            background-color: rgba(255, 255, 255, 0.9);   
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            width: 80%; /* Делаем блок 80% ширины */
+            display: flex;
+            flex-direction: column; /* Выстраиваем в столбик */
+            align-items: center; /* Центрируем содержимое */
+            padding: 20px; /* Добавляем немного отступов */
+            border-radius: 15px 15px 0px 0px;
+        }         
+        .content-info {
+            width: 100%; /* Растягиваем на всю ширину родителя */
+            display: flex;
+            flex-direction: column; /* Текст тоже в столбик */
+            text-align: left; /* Выравниваем текст по левому краю */
+            padding: 20px;
+        }
+        .info-prev {
+            align-items: center;
+            text-align: left; /* Выравниваем текст по левому краю */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .info-prev h1,
+        .info-prev h2 {
+            margin: 0;
+            cursor: default;
+            max-width: 90%; /* Ограничиваем ширину текста */
+            margin-bottom: 20px;
+        }   
+        .info-prev h1 {
+            text-align: center;
+            margin-top: 10px;
+            background-color: #ccb28e;
+            padding: 10px 15px;
+            border-radius: 2px;
+            color: white;
+            width: 80%;
+        }   
+        .content-info p {
+            align-items: left;
+            text-align: left;
+        }
+        .pclassH2 {
+            max-width: 90%;
+            font-size: 1.125rem;   
+            font-weight: bold;
+            margin-bottom: 10px;
+        } 
+        .pclassText {
+            max-width: 90%;
+            font-size: 0.875rem;
+        }  
+
+.btn-read-more {
+  display: inline-block;
+  padding: 8px 16px;
+  background: transparent;
+  border: 2px solid #ccb28e;
+  color: #ccb28e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.btn-read-more:hover {
+  background: #ccb28e;
+  color: #FFF;
+}

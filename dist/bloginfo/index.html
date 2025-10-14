@@ -34,9 +34,8 @@
       </ul>
     </li>
     <li><a href="/rent" data-i18n="head5">Nuoma</a></li>
-    <li><a href="/sold" data-i18n="head6">Kitos paslaugos</a></li>
+    <li><a href="/services" data-i18n="head6">Kitos paslaugos</a></li>
     <li><a href="/blog" data-i18n="head7">Publikacijos</a></li>
-    <li><a href="/index2" data-i18n="head1">Apie Mane</a></li>
     <li><a href="/kontakt" data-i18n="head8">Kontaktai</a></li>
   </ul>
 </nav>
@@ -70,10 +69,26 @@
           <li><a href="/villa" data-i18n="head2">Vilos</a></li>
           <li><a href="/rent" data-i18n="head3">Nuoma</a></li>
           <li><a href="/kontakt" data-i18n="head4">Kontaktai</a></li>
-          <li><a href="/sold" data-i18n="head5">Kitos paslaugos</a></li>
-          <li><a href="/index2" data-i18n="head6">Apie Mane</a></li>
+          <li><a href="/services" data-i18n="head5">Kitos paslaugos</a></li>
           <li><a href="/blog" data-i18n="head7">Publikacijos</a></li>
     </ul>
+          <div class="lang-fab2">
+        <div class="language-selector2">
+          <label for="lang-switcher" class="visually-hidden">Select language</label>
+          <select id="lang-switcher">
+            <option value="cs" selected>🇱🇹 LT</option>
+            <option value="en">🇬🇧 EN</option>
+            <option value="ru">🇷🇺 RU</option>
+            <option value="de">🇩🇪 DE</option>
+            <option value="lv">🇱🇻 LV</option>
+            <option value="pl">🇵🇱 PL</option>
+            <option value="fi">🇫🇮 FI</option>
+            <option value="it">🇮🇹 IT</option>
+            <option value="sl">🇸🇮 SL</option>
+            <option value="no">🇳🇴 NO</option>
+          </select>
+        </div>
+      </div>
 </nav>
   </div>
 </header>
@@ -83,15 +98,35 @@
     <!-- Основной контент -->
     <main>
         
-<link rel="stylesheet" href="/styles/list.css">
+<link rel="stylesheet" href="/styles/bloginfo.css">
+  <section class="hero-section1">
+    <div class="center-section">
+      <div class="center">
 
-<section id="home">
-  <section class="home-properties" id="properties-container">
-    <!-- Карточки будут рендериться сюда через JS -->
+        <!-- Заголовок -->
+        <div class="info-prev">
+          <h1>Заголовок H1</h1>
+          <h2>Подзаголовок H2</h2>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="content-info">
+          <p class="pclassH2">Заголовок абзаца</p>
+          <p class="pclassText">Текст абзаца — здесь будет описание, информация, история и т.д.</p>
+
+          <p class="pclassH2">Еще один заголовок</p>
+          <p class="pclassText">Дополнительный текст. Можно добавить несколько абзацев.</p>
+
+          <p class="pclassH2">И еще один</p>
+          <p class="pclassText">Текст для последнего раздела. Можно вставить ссылку или кнопку.</p>
+        </div>
+
+      </div>
+   </div>
+        <div>
+        <a href="/blog" class="btn-read-more">Return →</a>
+      </div>
   </section>
-</section>
-
-<script src="/script/sold.js"></script>
     </main>
 
     <!-- Включаем подвал -->
@@ -105,7 +140,6 @@
     <nav class="footer-nav">
       <ul class="footer-list">
         <li><a href="/">Privatumo Politika</a></li>
-        <li><a href="/">Apie Mane</a></li>
         <li><a href="/kontakt">Kontaktai</a></li>
         <p>&copy; Aiste di Casa</p>
       </ul>
