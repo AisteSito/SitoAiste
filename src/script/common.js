@@ -138,22 +138,43 @@ function applyTranslations() {
 document.addEventListener('DOMContentLoaded', loadTranslations);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const switcher = document.getElementById('lang-switcher');
-  if (switcher) {
-    // Обновляем селектор на текущий язык (который уже определён в loadTranslations)
-    switcher.value = currentLang;
+  // Находим оба селектора
+  const desktopSwitcher = document.getElementById('lang-switcher');
+  const mobileSwitcher = document.getElementById('lang-switcher-mobile'); // Новый id
 
-    switcher.addEventListener('change', () => {
-      const selectedLang = switcher.value;
-      if (translations[selectedLang]) {
-        currentLang = selectedLang;
-        localStorage.setItem('lang', selectedLang);
-        applyTranslations();
+  // Функция для обновления обоих селекторов
+  function updateSelectors(lang) {
+    if (desktopSwitcher) desktopSwitcher.value = lang;
+    if (mobileSwitcher) mobileSwitcher.value = lang;
+  }
 
-        // Важное обновление динамического контента
-        const langEvent = new CustomEvent("languageChanged");
-        window.dispatchEvent(langEvent);
-      }
+  // Обновляем селекторы при загрузке страницы
+  updateSelectors(currentLang);
+
+  // Функция для обработки смены языка
+  function handleLanguageChange(selectedLang) {
+    if (translations[selectedLang]) {
+      currentLang = selectedLang;
+      localStorage.setItem('lang', selectedLang);
+      applyTranslations();
+      updateSelectors(selectedLang); // Обновляем оба селектора
+
+      // Важное обновление динамического контента
+      const langEvent = new CustomEvent("languageChanged");
+      window.dispatchEvent(langEvent);
+    }
+  }
+
+  // Вешаем обработчики на оба селектора
+  if (desktopSwitcher) {
+    desktopSwitcher.addEventListener('change', (e) => {
+      handleLanguageChange(e.target.value);
+    });
+  }
+
+  if (mobileSwitcher) {
+    mobileSwitcher.addEventListener('change', (e) => {
+      handleLanguageChange(e.target.value);
     });
   }
 });
