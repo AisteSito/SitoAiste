@@ -41,67 +41,6 @@ function toggleMenu() {
     burger.classList.toggle("active");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const langSwitcher = document.getElementById("lang-switcher");
-
-  if (langSwitcher) {
-    langSwitcher.addEventListener("change", function () {
-      const lang = langSwitcher.value;
-
-      const googSelector = document.querySelector(".goog-te-combo");
-      if (googSelector) {
-        googSelector.value = lang;
-        googSelector.dispatchEvent(new Event("change"));
-      }
-    });
-  }
-});
-
-
-
-// Загружаем переводы и применяем
-function loadAndApplyTranslations(lang) {
-  fetch('/translate_static.json')
-    .then(res => res.json())
-    .then(translations => {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const translated = translations[key]?.[lang];
-        if (translated && translated.trim() !== '') {
-          el.textContent = translated;
-        }
-      });
-    });
-}
-
-// Применяем язык при загрузке
-document.addEventListener('DOMContentLoaded', function () {
-  const lang = localStorage.getItem('lang') || 'cs';
-  window.currentLang = localStorage.getItem('lang') || 'cs';
-  loadAndApplyTranslations(lang);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const switcher = document.getElementById('lang-switcher');
-  const currentLang = localStorage.getItem('lang') || 'cs';
-
-  if (switcher) {
-    switcher.value = currentLang;
-
-    switcher.addEventListener('change', () => {
-      const selectedLang = switcher.value;
-      localStorage.setItem('lang', selectedLang);
-      window.currentLang = selectedLang;
-
-      // Применяем переводы
-      loadAndApplyTranslations(selectedLang);
-
-      // Вызываем событие
-      const langEvent = new CustomEvent("languageChanged");
-      window.dispatchEvent(langEvent);
-    });
-  }
-});
 
 
 
@@ -124,3 +63,97 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   
+// i18n.js
+
+let translations = {};
+let currentLang = 'lt'; // По умолчанию литовский
+
+async function loadTranslations() {
+  try {
+    const res = await fetch('/script/statick.json');
+    translations = await res.json();
+
+    // Проверяем, есть ли переводы для 'lt'
+    if (!translations.lt) {
+      console.error("Переводы для 'lt' не найдены в statick.json");
+      return;
+    }
+
+    // Берем язык из localStorage
+    let savedLang = localStorage.getItem('lang');
+
+    // Если в localStorage есть валидный язык — используем его
+    if (savedLang && translations[savedLang]) {
+      currentLang = savedLang;
+    } else {
+      // Если нет или невалидный — ставим 'lt' по умолчанию
+      currentLang = 'lt';
+    }
+
+    // Применяем переводы
+    applyTranslations();
+
+  } catch (error) {
+    console.error('Ошибка загрузки перевода:', error);
+  }
+}
+
+function getTranslatedValue(entry, key, lang) {
+  const value = entry?.translations?.[lang]?.[key];
+  if (value && value.trim()) return value;
+  return entry?.original?.[key] || "";
+}
+
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[currentLang]?.[key]) {
+      el.textContent = translations[currentLang][key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[currentLang]?.[key]) {
+      el.setAttribute('placeholder', translations[currentLang][key]);
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-value]').forEach(el => {
+    const key = el.getAttribute('data-i18n-value');
+    if (translations[currentLang]?.[key]) {
+      el.dataset.i18nValueTranslated = translations[currentLang][key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-alt');
+    if (translations[currentLang]?.[key]) {
+      el.setAttribute('alt', translations[currentLang][key]);
+    }
+  });
+}
+
+// Вызываем загрузку переводов после полной загрузки страницы
+document.addEventListener('DOMContentLoaded', loadTranslations);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const switcher = document.getElementById('lang-switcher');
+  if (switcher) {
+    // Обновляем селектор на текущий язык (который уже определён в loadTranslations)
+    switcher.value = currentLang;
+
+    switcher.addEventListener('change', () => {
+      const selectedLang = switcher.value;
+      if (translations[selectedLang]) {
+        currentLang = selectedLang;
+        localStorage.setItem('lang', selectedLang);
+        applyTranslations();
+
+        // Важное обновление динамического контента
+        const langEvent = new CustomEvent("languageChanged");
+        window.dispatchEvent(langEvent);
+      }
+    });
+  }
+});
