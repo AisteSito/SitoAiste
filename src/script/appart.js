@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="prop-down-sec">
           <div>
             <p class="property-size">${prop.M2}</p>
-            <p class="property-price">${prop.Price}</p>
+            <p class="property-price">${prop.Price} €</p>
           </div>
           <div class="property-buttons">
               <a class="btn-main" href="/property/?slug=${prop.slug}&src=appart">Plačiau</a>
