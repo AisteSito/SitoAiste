@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderProperties(data);
     })
     .catch((err) => {
-      console.error("Ошибка загрузки JSON:", err);
+      console.error("Ошибка загрузки JSON (villa):", err);
     });
 
   function renderProperties(properties) {
@@ -17,29 +17,52 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("div");
       card.classList.add("property-card");
 
-      // Убираем лишние пробелы и кодируем путь
-      const firstImage = prop.images[0].src; // Не меняем путь — он уже правильный
-      card.style.backgroundImage = `url('https://raw.githubusercontent.com/AisteSito/AisteCMS/main/villa/${encodeURIComponent(firstImage)}')`;
+      // Путь к первой картинке (не трогаем, как и просил)
+      const firstImage = prop.images[0].src;
 
-      card.innerHTML = `
-        <div class="property-content">
-          <div class="property-text">
-            <h3>${prop.Name}</h3>
-            <p class="property-description">${prop.descrizione}</p>
+      // === Блок с текстом ===
+      const contentBlock = document.createElement("div");
+      contentBlock.classList.add("property-content");
+      contentBlock.innerHTML = `
+        <div class="property-text">
+          <h3>${prop.Name}</h3>
+          <p class="property-description">${prop.descrizione}</p>
+        </div>
+        <div class="prop-down-sec">
+          <div>
+            <p class="property-size">${prop.M2}</p>
+            <p class="property-price">${prop.Price}</p>
           </div>
-          <div class="prop-down-sec">
-            <div>
-              <p class="property-size">${prop.M2}</p>
-              <p class="property-price">${prop.Price}</p>
-            </div>
-            <div class="property-buttons">
-              <a class="btn-main" href="/property/?slug=${prop.slug}&src=villa">Plačiau</a>
-              <a class="btn-icon" href="/property/?slug=${prop.slug}&src=villa">&#8594;</a>
-            </div>
+          <div class="property-buttons">
+            <a class="btn-main" href="/property/?slug=${prop.slug}&src=villa">Plačiau</a>
+            <a class="btn-icon" href="/property/?slug=${prop.slug}&src=villa">&#8594;</a>
           </div>
         </div>
       `;
 
+      // === Блок с изображением ===
+      const imageBlock = document.createElement("div");
+      imageBlock.classList.add("property-image");
+      imageBlock.innerHTML = `
+        <img src="https://raw.githubusercontent.com/AisteSito/AisteCMS/main/villa/${encodeURIComponent(firstImage)}" alt="${prop.Name}" />
+        <button class="info-toggle-btn">Info ℹ️</button>
+      `;
+
+      // === Добавляем всё в карточку ===
+      card.appendChild(contentBlock);
+      card.appendChild(imageBlock);
+
+      // === Обработчик кнопки ===
+      const toggleBtn = imageBlock.querySelector(".info-toggle-btn");
+      toggleBtn.addEventListener("click", () => {
+        if (contentBlock.style.display === "flex") {
+          contentBlock.style.display = "none";
+        } else {
+          contentBlock.style.display = "flex";
+        }
+      });
+
+      // === Добавляем карточку в контейнер ===
       container.appendChild(card);
     });
   }

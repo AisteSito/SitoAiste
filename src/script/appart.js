@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="property-price">${prop.Price}</p>
           </div>
           <div class="property-buttons">
-            <a class="btn-main" href="https://api.whatsapp.com/send?phone=37068349117">Plačiau &#8594;</a>
+              <a class="btn-main" href="/property/?slug=${prop.slug}&src=appart">Plačiau</a>
+              <a class="btn-icon" href="/property/?slug=${prop.slug}&src=appart">&#8594;</a>
           </div>
         </div>
       `;
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       imageBlock.classList.add("property-image");
       imageBlock.innerHTML = `
         <img src="https://raw.githubusercontent.com/AisteSito/AisteCMS/main/appart/${encodeURIComponent(firstImage)}" alt="${prop.Name}" />
-        <button class="info-toggle-btn">Info ℹ️</button>
+        <button class="info-toggle-btn">Daugiau</button>
       `;
 
 
