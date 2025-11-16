@@ -183,7 +183,7 @@
     bottom: 0;
     z-index: 2;
     background-color: rgba(204, 178, 142, 0.9);
-    display: none; /* Скрыт по умолчанию */
+    display: flex; /* Скрыт по умолчанию */
     flex-direction: row;
     justify-content: center;
   }

@@ -45,23 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
       imageBlock.classList.add("property-image");
       imageBlock.innerHTML = `
         <img src="https://raw.githubusercontent.com/AisteSito/AisteCMS/main/villa/${encodeURIComponent(firstImage)}" alt="${prop.Name}" />
-        <button class="info-toggle-btn">Info ℹ️</button>
       `;
 
       // === Добавляем всё в карточку ===
       card.appendChild(contentBlock);
       card.appendChild(imageBlock);
-
-      // === Обработчик кнопки ===
-      const toggleBtn = imageBlock.querySelector(".info-toggle-btn");
-      toggleBtn.addEventListener("click", () => {
-        if (contentBlock.style.display === "flex") {
-          contentBlock.style.display = "none";
-        } else {
-          contentBlock.style.display = "flex";
-        }
-      });
-
       // === Добавляем карточку в контейнер ===
       container.appendChild(card);
     });
