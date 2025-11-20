@@ -8,11 +8,11 @@
 .property-card {
   position: relative;
   margin-bottom: 50px;
-  width: 70%;
+  width: 155vh;
   margin-top: 10px;
   display: flex;
   flex-direction: row;
-  height: 500px;
+  height: 80vh;
   overflow: hidden;
   color: white;
   background-color: #B29575;
